@@ -30,7 +30,7 @@ class FuriganaHttpHandler extends HttpHandler:
         val headers = exchange.getResponseHeaders.nn
         val body = exchange.getResponseBody.nn
 
-        headers.set("Cache-Control", "immutable")
+        headers.set("Cache-Control", "public, max-age=604800, immutable")
         headers.set("Content-Type", "image/png")
 
         exchange.sendResponseHeaders(200, image.length)
